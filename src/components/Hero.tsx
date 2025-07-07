@@ -38,7 +38,7 @@ export function Hero({ onExploreAgents, onGetStarted }: HeroProps) {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-xl sm:text-2xl text-customGray max-w-3xl mx-auto mb-12 leading-relaxed">
             Transform your ecommerce operations with intelligent AI agents that work 24/7. 
             From customer support to inventory management, automate everything seamlessly.
           </p>
@@ -71,21 +71,21 @@ export function Hero({ onExploreAgents, onGetStarted }: HeroProps) {
                 <Zap className="h-10 w-10 text-white" />
               </div>
               <div className="text-4xl font-bold text-foreground mb-2">8+</div>
-              <div className="text-base text-muted-foreground font-medium">Specialized AI Agents</div>
+              <div className="text-base text-customGray font-medium">Specialized AI Agents</div>
             </div>
             <div className="text-center group">
               <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300">
                 <TrendingUp className="h-10 w-10 text-white" />
               </div>
               <div className="text-4xl font-bold text-foreground mb-2">40%</div>
-              <div className="text-base text-muted-foreground font-medium">Average Efficiency Boost</div>
+              <div className="text-base text-customGray font-medium">Average Efficiency Boost</div>
             </div>
             <div className="text-center group">
               <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300">
                 <Sparkles className="h-10 w-10 text-white" />
               </div>
               <div className="text-4xl font-bold text-foreground mb-2">24/7</div>
-              <div className="text-base text-muted-foreground font-medium">Automated Operations</div>
+              <div className="text-base text-customGray font-medium">Automated Operations</div>
             </div>
           </div>
         </div>

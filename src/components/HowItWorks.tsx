@@ -25,30 +25,30 @@ export function HowItWorks() {
   ]
 
   return (
-    <section className="py-20 sm:py-32 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 sm:py-32 bg-[#ECECF04D]" >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="text-center mb-20">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             How It Works
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-customGray max-w-3xl mx-auto leading-relaxed ">
             Get started with AI automation in three simple steps. No technical expertise required.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 !px-24 sm:px-8 lg:px-10">
           {steps.map((step, index) => {
             const IconComponent = step.icon
             return (
               <div key={index} className="relative text-center group">
                 {/* Connection line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-16 left-1/2 w-full h-0.5 bg-gradient-to-r from-current to-transparent text-muted-foreground/20 z-0" />
+                  <div className="hidden md:block absolute top-16 left-1/2 w-full h-0.5 bg-gradient-to-r from-current to-transparent text-muted-foreground/20 z-0" /> 
                 )}
                 
                 <div className="relative z-10">
                   {/* Step number */}
-                  <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-medium mb-6">
+                  <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white text-sm font-medium mb-6 ">
                     {index + 1}
                   </div>
                   
@@ -58,8 +58,8 @@ export function HowItWorks() {
                   </div>
                   
                   {/* Content */}
-                  <h3 className="text-xl font-bold mb-4">{step.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <h3 className="text-xl font-bold mb-4 !px-4">{step.title}</h3>
+                  <p className=" leading-relaxed text-customGray ">
                     {step.description}
                   </p>
                 </div>

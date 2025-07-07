@@ -123,7 +123,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
 
   body {
@@ -493,4 +493,10 @@ html {
   .dark ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.3);
   }
+}
+
+button[data-slot="button"]:focus,
+button[data-slot="button"]:active,
+button[data-slot="button"]:hover {
+  border-color: inherit !important;
 }

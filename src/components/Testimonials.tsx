@@ -82,14 +82,14 @@ export function Testimonials() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Trusted by Leading Businesses
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-customGray max-w-3xl mx-auto leading-relaxed">
             See how companies are transforming their operations with QAID AI agents.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 !px-20 sm:px-8 lg:px-10">
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="bg-card border-border hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
+            <Card key={testimonial.id} className="bg-card border border-gray-200 rounded-lg hover:shadow-lg transition-all duration-300 relative overflow-hidden group ">
               <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
                 <Quote className="h-12 w-12 text-primary" />
               </div>
@@ -103,7 +103,7 @@ export function Testimonials() {
                 </div>
                 
                 {/* Content */}
-                <blockquote className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                <blockquote className="text-sm text-customGray mb-6 leading-relaxed">
                   "{testimonial.content}"
                 </blockquote>
                 
@@ -122,14 +122,14 @@ export function Testimonials() {
                   </Avatar>
                   <div>
                     <p className="font-medium text-sm">{testimonial.name}</p>
-                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
-                    <p className="text-xs text-muted-foreground">{testimonial.company}</p>
+                    <p className="text-xs text-customGray">{testimonial.role}</p>
+                    <p className="text-xs text-customGray">{testimonial.company}</p>
                   </div>
                 </div>
                 
                 {/* Agent Used */}
                 <div className="mt-4 pt-4 border-t border-border">
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-xs text-customGray">
                     Using: <span className="text-primary font-medium">{testimonial.agent}</span>
                   </p>
                 </div>
@@ -142,19 +142,19 @@ export function Testimonials() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
             <div className="text-3xl font-bold text-primary mb-2">500+</div>
-            <div className="text-sm text-muted-foreground">Happy Customers</div>
+            <div className="text-sm text-customGray">Happy Customers</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-primary mb-2">$2M+</div>
-            <div className="text-sm text-muted-foreground">Revenue Generated</div>
+            <div className="text-sm text-customGray">Revenue Generated</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-primary mb-2">99.9%</div>
-            <div className="text-sm text-muted-foreground">Uptime</div>
+            <div className="text-sm text-customGray">Uptime</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-            <div className="text-sm text-muted-foreground">Support</div>
+            <div className="text-sm text-customGray">Support</div>
           </div>
         </div>
       </div>

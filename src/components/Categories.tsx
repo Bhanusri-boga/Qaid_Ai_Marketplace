@@ -3,10 +3,10 @@
 import { useState } from 'react'
 import { Button } from './ui/button'
 import { Badge } from './ui/badge'
-import { 
-  MessageCircle, 
-  TrendingUp, 
-  Package, 
+import {
+  MessageCircle,
+  TrendingUp,
+  Package,
   Megaphone,
   FileText,
   BarChart3,
@@ -75,46 +75,66 @@ export function Categories() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
 
   return (
-    <section className="py-20 sm:py-32 bg-muted/30">
+    <section className="py-20 sm:py-32 bg-[#ECECF04D]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ">
             Categories & Use Cases
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-customGray max-w-3xl mx-auto leading-relaxed">
             Find the perfect AI agents for your specific business needs and workflows.
           </p>
         </div>
 
         {/* Category Filter Chips */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          <Button
-            variant={selectedCategory === null ? "default" : "outline"}
-            onClick={() => setSelectedCategory(null)}
-            className="rounded-full"
-          >
-            All Categories
-            <Badge variant="secondary" className="ml-2">
-              {categories.reduce((sum, cat) => sum + cat.count, 0)}
-            </Badge>
-          </Button>
+        <div className="flex flex-wrap justify-center gap-3 mb-12 ">
+        <Button
+  onClick={() => setSelectedCategory(null)}
+  className={`rounded-full border-2 transition-colors px-4 py-2 flex items-center  !focus:outline-none !focus:ring-0 !focus:border-gray-300
+    ${selectedCategory === null 
+      ? '!bg-black text-white border-black' 
+      : '!bg-white !text-black !border-gray-300 hover:!bg-gray-100'
+    }`}
+>
+  All Categories
+  <Badge
+    variant="outline"
+    className={`ml-2 text-xs px-2 py-0.5 rounded-md
+      ${selectedCategory === null 
+        ? 'bg-white text-black' 
+        : 'bg-gray-200 text-black'
+      }`}
+  >
+    {categories.reduce((sum, cat) => sum + cat.count, 0)}
+  </Badge>
+</Button>
+
+
           {categories.map((category) => (
             <Button
               key={category.id}
-              variant={selectedCategory === category.id ? "default" : "outline"}
               onClick={() => setSelectedCategory(category.id)}
-              className="rounded-full"
+              className={`rounded-full border-2 transition-colors px-4 py-2 ${selectedCategory === category.id
+                ? '!bg-black text-white border-black'
+                : 'bg-white text-black border-gray-300 hover:bg-gray-100 '
+                }`
+    }
             >
               {category.name}
-              <Badge variant="secondary" className="ml-2">
+              <Badge
+                variant="outline"
+                className={`ml-2 text-xs ${selectedCategory === category.id ? 'bg-white text-black' : 'bg-gray-200'
+                  }`}
+              >
                 {category.count}
               </Badge>
             </Button>
+
           ))}
         </div>
 
         {/* Category Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 !px-24 sm:px-8 lg:px-10 ">
           {categories
             .filter(category => selectedCategory === null || category.id === selectedCategory)
             .map((category) => {
@@ -122,7 +142,7 @@ export function Categories() {
               return (
                 <div
                   key={category.id}
-                  className="group bg-card rounded-xl p-6 border border-border hover:border-primary/20 transition-all duration-300 hover:shadow-lg cursor-pointer"
+                  className="group bg-white bg-card-white rounded-xl p-6 border border-gray-300 hover:border-gray-300 transition-all duration-300 hover:shadow-lg cursor-pointer"
                   onClick={() => setSelectedCategory(category.id === selectedCategory ? null : category.id)}
                 >
                   <div className="flex items-center space-x-4 mb-4">
@@ -133,24 +153,24 @@ export function Categories() {
                       <h3 className="font-bold text-lg group-hover:text-primary transition-colors">
                         {category.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-customGray">
                         {category.count} agents available
                       </p>
                     </div>
                   </div>
-                  
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+
+                  <p className="text-customGray text-base mb-4 leading-relaxed">
                     {category.description}
                   </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
+
+                  <div className="flex flex-wrap gap-2 mb-4 ">
                     {category.agents.slice(0, 3).map((agent, index) => (
-                      <Badge key={index} variant="outline" className="text-xs">
+                      <Badge key={index} variant="outline" className="text-xs border-gray-300">
                         {agent}
                       </Badge>
                     ))}
                   </div>
-                  
+
                   <div className="flex items-center text-sm text-primary font-medium group-hover:text-primary/80 transition-colors">
                     <Zap className="h-4 w-4 mr-1" />
                     Explore {category.name}

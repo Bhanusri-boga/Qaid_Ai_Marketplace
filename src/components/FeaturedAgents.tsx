@@ -89,7 +89,7 @@ export function FeaturedAgents({ onAgentSelect, onExploreAgents }: FeaturedAgent
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Featured AI Agents
           </h2>
-          <p className="text-lg sm:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-customGray max-w-3xl mx-auto leading-relaxed">
             Discover our most popular AI agents that are transforming businesses worldwide.
           </p>
         </div>
@@ -123,7 +123,7 @@ export function FeaturedAgents({ onAgentSelect, onExploreAgents }: FeaturedAgent
                   <CardTitle className="group-hover:text-primary transition-colors">
                     {agent.name}
                   </CardTitle>
-                  <div className="flex items-center space-x-2 text-sm text-gray-500">
+                  <div className="flex items-center space-x-2 text-sm text-customGray">
                     <div className="flex items-center">
                       <Star className="h-4 w-4 fill-yellow-400 text-yellow-400 mr-1" />
                       <span>{agent.rating}</span>
@@ -134,7 +134,7 @@ export function FeaturedAgents({ onAgentSelect, onExploreAgents }: FeaturedAgent
                 </CardHeader>
                 
                 <CardContent className="pb-4">
-                  <CardDescription className="mb-4 line-clamp-3 text-gray-500">
+                  <CardDescription className="mb-4 line-clamp-3 text-customGray">
                     {agent.description}
                   </CardDescription>
                   
@@ -145,13 +145,14 @@ export function FeaturedAgents({ onAgentSelect, onExploreAgents }: FeaturedAgent
                 
                 <CardFooter className="pt-0">
                   <Button 
-                    className="w-full border border-gray-300 text-black bg-white 
-             hover:!bg-gray-100 hover:!text-black 
-             group-hover:bg-black group-hover:text-white group-hover:border-transparent 
-             transition-colors duration-300 !border-gray-300 hover:bg-gray-100 transition-all duration-300 shadow-md hover:shadow-lg "
+                  className="w-full text-black bg-white border border-gray-300 
+                  hover:bg-gray-100 hover:!text-black hover:!border-gray-300 
+                  group-hover:bg-black group-hover:text-white group-hover:border-transparent 
+                  focus:outline-none focus:ring-0 
+                  transition-all duration-300 shadow-md hover:shadow-lg"
                     variant="outline"
                   >
-                    <Zap className="h-4 w-4 mr-2" />
+                    <Zap className="h-4 w-4 mr-2 " />
                     View Details
                   </Button>
                 </CardFooter>
